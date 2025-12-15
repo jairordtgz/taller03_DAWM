@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simpsons (Filtros + Tarjetas)</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>The Simpsons API</h1>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <h2 class="section-title">Filtros</h2>
+
+      <div class="control">
+        <label for="q">Buscar por nombre</label>
+        <input id="q" type="text" placeholder="Ej: Homer, Lisa..." autocomplete="off" />
+      </div>
+
+      <div class="row">
+        <div class="control">
+          <label for="minAge">Edad mínima</label>
+          <input id="minAge" type="number" min="0" max="120" placeholder="0" />
+        </div>
+        <div class="control">
+          <label for="maxAge">Edad máxima</label>
+          <input id="maxAge" type="number" min="0" max="120" placeholder="120" />
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="status">Estado</label>
+        <select id="status">
+          <option value="all">Todos</option>
+          <option value="Alive">Alive</option>
+          <option value="Deceased">Deceased</option>
+        </select>
+      </div>
+
+      <div class="btns">
+        <button id="btnReset">Reiniciar</button>
+        <button class="primary" id="btnApply">Aplicar</button>
+      </div>
+
+    </aside>
+
+    <main>
+      <div id="stateBox" class="loading">Cargando datos...</div>
+      <div id="grid" class="grid" style="display:none;"></div>
+    </main>
+  </div>
+
+  <script src="./javascript/main.js"></script>
+</body>
+</html>
