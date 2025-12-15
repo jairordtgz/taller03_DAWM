@@ -121,10 +121,8 @@ function applyFilters(data) {
     const status = (statusEl.value || "").trim();
     const minAgeVal = (minAgeEl.value || "").trim();
     const maxAgeVal = (maxAgeEl.value || "").trim();
-
     let result = Array.isArray(data) ? data.slice() : [];
 
-    
     if (status && status.toLowerCase() !== "all") {
         result = result.filter(item => {
             const s = (item.status || "").toString();
@@ -132,7 +130,6 @@ function applyFilters(data) {
         });
     }
 
-    
     if (minAgeVal !== "") {
         const minAge = Number(minAgeVal);
         if (!Number.isNaN(minAge)) {
@@ -146,9 +143,7 @@ function applyFilters(data) {
             result = result.filter(item => typeof item.age === 'number' && item.age <= maxAge);
         }
     }
-
     return result;
-
 }
 
 function showData() {
